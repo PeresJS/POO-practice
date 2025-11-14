@@ -8,12 +8,16 @@ public class Carro {
     int kmPorLitros;
 
 
-     void abastecer(int litros) {
-         combustivel = combustivel + litros;
-
-     }
-     void tirarGasolina(int litros) {
-         combustivel = combustivel - litros;
+     int abastecer(int litros) {
+         int soma = combustivel + litros;
+         if (soma > capacidadeTanque) {
+             combustivel = capacidadeTanque;
+             int sobra = soma - capacidadeTanque;
+             return sobra;
+         } else {
+             combustivel = soma;
+             return soma;
+         }
      }
      int autonomiaCombustivel(){
         int autonomia = combustivel * kmPorLitros;
