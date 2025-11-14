@@ -1,19 +1,22 @@
 public class Carro {
     int cavalos;
     String cor;
-    String transmissao;
     String montadora;
+    String transmissao;
     int combustivel;
+    int capacidadeTanque;
     int kmPorLitros;
-    boolean turbo;
-    String capacidadeTanque;
 
-    void abastecer(int litros) {
-        combustivel = combustivel + litros;
-    }
 
-    int autonomiaCombustivel() {
-        int autonomia = kmPorLitros * combustivel;
-        return autonomia;
-    }
+     void abastecer(int litros) {
+         combustivel = combustivel + litros;
+
+     }
+     void tirarGasolina(int litros) {
+         combustivel = combustivel - litros;
+     }
+     int autonomiaCombustivel(){
+        int autonomia = combustivel * kmPorLitros;
+         return autonomia;
+     }
 }
